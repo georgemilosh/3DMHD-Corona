@@ -1,5 +1,5 @@
 # 3DMHD-Corona
-3D MHD model of solar coronal loop structure that was developed for a [master thesis](docs/thesis.pdf) by [George Miloshevich](https://georgemilosh.github.io) that was defended in summer 2012.
+3D MHD model of solar coronal loop structure that was developed for a [master thesis](docs/Thesis.pdf) by [George Miloshevich](https://georgemilosh.github.io) that was defended in summer 2012.
 
 ![Upflow trapped in magnetic arcade](/docs/out.gif)
 
@@ -8,19 +8,11 @@ This thesis explores thermalization of chromospheric upflows as they reach solar
 
 ## Mathematical model
 Evolution of density:
-$$
-    \frac{\partial n}{\partial t}+\partial_j\left(n v_j\right)=0
-$$
+$$ \frac{\partial n}{\partial t}+\partial_j\left(n v_j\right)=0 $$
 Evolution of momentum:
-$$
-    \frac{\partial}{\partial t}\left(n v_i\right)+\partial_j\left(n v_i v_j+\left(p+\frac{B^2}{2}\right) \delta_{i j}-B_i B_j\right)=0
-$$
+$$ \frac{\partial}{\partial t}\left(n v_i\right)+\partial_j\left(n v_i v_j+\left(p+\frac{B^2}{2}\right) \delta_{i j}-B_i B_j\right)=0 $$
 Evolution of magnetic field:
-$$
-    \frac{\partial B_i}{\partial t}+\partial_j\left(v_j B_i-B_j v_i\right)=0
-$$
-
-
+$$ \frac{\partial B_i}{\partial t}+\partial_j\left(v_j B_i-B_j v_i\right)=0 $$
 
 
 ## Technical Details
