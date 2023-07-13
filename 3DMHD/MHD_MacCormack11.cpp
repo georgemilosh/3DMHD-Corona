@@ -53,7 +53,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
     double eps = 20.0; //artificial viscosity constant ~ 1
     int brk, bdim;
     
-    //Input Data:
+    //Input Data: (inputs to the mex function in MATLAB)
     
     T_num = (mwSignedIndex)*mxGetPr(prhs[0]);
     Delta = *mxGetPr(prhs[1]);

@@ -1,5 +1,5 @@
 # 3DMHD-Corona
-3D MHD model of solar coronal loop structure that was developed for a master thesis by [George Miloshevich](georgemilosh.github.io) that was defended in summer 2012.
+3D MHD model of solar coronal loop structure that was developed for a ![master thesis](/docs/thesis.pdf) by [George Miloshevich](https://georgemilosh.github.io) that was defended in summer 2012.
 
 ![Upflow trapped in magnetic arcade](/docs/out.gif)
 
@@ -9,5 +9,8 @@ This thesis explores thermalization of chromospheric upflows as they reach solar
 
 ## Technical Details
 
-The simulation is written in C embedded in MATLAB 2012 for flexibility. C library uses `mex.h` which is provided via MATLAB. For details about how to use this approach read more details in [mex files](https://www.mathworks.com/help/matlab/call-mex-file-functions.html). The point to retain is that the simulation can be launched directly from MATLAB as though it was supported by MATLAB and the output is written to disk and RAM. 
-```
+The simulation is written in C embedded in MATLAB 2012 for flexibility. C library uses `mex.h` which is provided via MATLAB. For more information about how to use this approach see [mex files](https://www.mathworks.com/help/matlab/call-mex-file-functions.html). The point to retain is that the simulation can be launched directly from MATLAB as though it was supported by MATLAB and the output is written to disk and RAM. 
+
+## Numerics
+
+The scripts rely on MacCormack method for time integration and artificial viscosity for shock capturing. The adaptation is based on the famous book [Numerical Recipes in C](https://dl.acm.org/doi/10.5555/148286). The MacCormack method is a two-step predictor-corrector method that is second order accurate in both space and time. The artificial viscosity is a numerical technique that is used to capture shocks. The code runs on a single core. 

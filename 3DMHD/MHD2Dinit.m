@@ -1,3 +1,5 @@
+% Initialize the state and run the 2D MHD solver
+
 B0 = 20;
 mi = 1.67e-24;
 T0 = 4.8e-12;

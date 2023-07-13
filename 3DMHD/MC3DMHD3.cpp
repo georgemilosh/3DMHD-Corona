@@ -40,7 +40,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
     double eps = 0.0; //artificial viscosity constant ~ 1
     int brk;
     
-    //Input Data:
+    //Input Data: (the arguments that mex function takes in MATLAB)
     T  = (mwSignedIndex)*mxGetPr(prhs[0]);
     T_num = (mwSignedIndex)*mxGetPr(prhs[1]);
     Delta = *mxGetPr(prhs[2]);
@@ -98,7 +98,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
     
     u_out = (double*) mxMalloc(T_num*X*Y*8*sizeof(double));
     t_out = (double*) mxMalloc(T_num*sizeof(double));
-  
+    
     int u_dim[5] = {Y, X, Z, 8, T_num};
     plhs[0] = mxCreateNumericArray(5, u_dim, mxDOUBLE_CLASS, mxREAL);
     u_out = mxGetPr(plhs[0]);
@@ -132,13 +132,13 @@ void mexFunction(int nlhs, mxArray *plhs[],
                 artz[k][j][r] = 0;
             }
      //Simulation Starts Here
-     t_out[0] = 0;
-     a = 0;
-     n = 1;
-     brk = 0;
-     while ((n <= T)&&(brk == 0))
-     {
-         for (i = 0; i < 8; i++)
+    t_out[0] = 0;
+    a = 0;
+    n = 1;
+    brk = 0;
+    while ((n <= T)&&(brk == 0))
+    {
+        for (i = 0; i < 8; i++)
             for (j = 0; j < X; j++)
                 for (k = 0; k < Y; k++)
                     for (r = 0; r < Z; r++)
@@ -150,8 +150,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
                             U_int[i][j][k][r] = U[i][j][k][r];
                     }
          //stops in case of NaN
-         if (brk == 1)
-             printf("Stopped on %d iteration\n",n);
+        if (brk == 1)
+            printf("Stopped on %d iteration\n",n);
         //First Step
         Forw_Pred(Delta, X, Y, Z, gamma, eps, U, U_int, u, v, w, artx, arty,
                 artz);
@@ -161,7 +161,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
         //Boundary Condition:
         
         
-       
+        
         //for (r = 0; r < 5; r++)
         //    for (i = 0; i < X; i++)
         //        for (j = 0; j < Y; j++)
@@ -208,7 +208,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
             a++;
         }
         n++;
-     }
+    }
     
     
 }
@@ -566,7 +566,7 @@ void Back_Corr(double Delta, int X, int Y, int Z, double gamma, double eps,
                         (U_int[3][j][k][r] - U_int[3][j][k][r-1])
                         ))/2;
                 //Pressure Density Equation
-                 U[4][j][k][r] = (U[4][j][k][r] + U_int[4][j][k][r] -
+                U[4][j][k][r] = (U[4][j][k][r] + U_int[4][j][k][r] -
                         Delta*( U_int[4][j][k][r]*u[j][k][r] -  
                         U_int[4][j-1][k][r]*u[j-1][k][r] + 
                         U_int[4][j][k][r]*v[j][k][r] - 
