@@ -7,6 +7,7 @@
 This thesis explores thermalization of chromospheric upflows as they reach solar corona and are trapped in the magnetic field loops. The crucial mechanism behind this transfer of kinetic energy to heat is the ability of supersonic flows to steepen and generate shorter scales which can dissipate. The full treatment would require at least two-fluid effects which have the relevant small scales. However for simulation purposes we will limit ourselves to 3D MHD model of supersonic flows with adiabatic isothermal closure and no Hall term and leave these effects for future developments. Then the primary challenge is to accurately model such high Mach number flows which we achieve by using a combination of implicit MacCormack scheme and artificial viscosity. The project culminates in the illustration of coronal loop structure formation and heating via numerical simulation. 
 
 ## Mathematical model
+$$ n $$
 Evolution of density:
 $$ \frac{\partial n}{\partial t}+\partial_j\left(n v_j\right)=0 $$
 Evolution of momentum:
