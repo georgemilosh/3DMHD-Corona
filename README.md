@@ -1,5 +1,5 @@
 # 3DMHD-Corona
-3D MHD model of solar coronal loop structure that was developed for a [master thesis](docs/Thesis.pdf) by [George Miloshevich](https://georgemilosh.github.io) that was defended in summer 2012.
+3D MHD model of solar coronal loop structure that was developed for a [master thesis](docs/Thesis.pdf) defended in summer 2012 by [George Miloshevich](https://georgemilosh.github.io).
 
 ![Upflow trapped in magnetic arcade](/docs/out.gif)
 
